@@ -1,16 +1,23 @@
+import Header from "./Header/Header";
+import SearchBar from "./SearchBar/SearchBar";
+
+import { useState } from "react";
+
 export const App = () => {
+    const [search, setSearch] = useState({
+    search: '',
+  });
+  
+
+  const handleClickSubmit = ({search})=> {
+    setSearch(search)
+  } 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <div className="App">
+      <Header />
+      <main className="container">
+        <SearchBar handleClickSubmit={handleClickSubmit}/>
+      </main>  
+     </div> 
   );
 };

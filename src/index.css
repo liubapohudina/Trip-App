@@ -13,3 +13,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container {
+  margin-top: 30px;
+  min-width: 320px;
+  max-width: 1240px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.App {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/*------------------ADAPTIVE LAYOUT-----------------*/
+@media screen and (min-width: 427px) {
+  .container {
+    min-width: 427px;
+  }
+}
+
+@media screen and (min-width: 728px) {
+  .container {
+    min-width: 550px;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1240px) {
+  .container {
+    min-width: 930px;
+  }
+}
