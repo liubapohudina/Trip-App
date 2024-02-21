@@ -69,9 +69,29 @@ const TripList = ({ dataSearch }) => {
         ) : (
             <AddTripItem onAddTrip={addTripToList} />
         )}
-    </section>
-);
-
+       </section>
+    /*---------------------USE THIS LAYOUT WITH API---------------------*/
+    //    <section>
+    //         {isLoading && <p>Loading...</p>}
+    //         {dataSearch.length ? (
+    //             <ul className={styles.tripList}>
+    //                 <TripListItem data={filterData} />
+    //                 <AddTripItem onAddTrip={addTripToList} />
+    //             </ul>
+    //         ) : (
+    //             data.length > 0 ? (
+    //                 <ul className={styles.tripList}>
+    //                     {data.map((trip, index) => (
+    //                         <TripListItem key={index} index={index} data={trip} />
+    //                     ))}
+    //                     <AddTripItem onAddTrip={addTripToList} />
+    //                 </ul>
+    //             ) : (
+    //                 <AddTripItem onAddTrip={addTripToList} />
+    //             )
+    //         )}
+    //     </section>
+   )
 }
 
 export default TripList;
