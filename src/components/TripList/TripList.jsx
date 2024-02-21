@@ -7,7 +7,7 @@ const TripList = ({ dataSearch }) => {
     const [data, setData] = useState([]);
     const [filterData, setFilterData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    console.log(dataSearch.length)
+    
 
     useEffect(() => {
         setIsLoading(true);
