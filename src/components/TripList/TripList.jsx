@@ -11,24 +11,34 @@ const TripList = ({ dataSearch }) => {
 
     const mockData = generateRandomTrips(2);
     console.log(mockData)
-    
 
     useEffect(() => {
-        //setIsLoading(true);
-        setData(mockData);
-        // const storedData = localStorage.getItem('forecastData');
-        // try {
-        //     if (storedData) {
-        //         const forecastData = JSON.parse(storedData);
-        //         setData(prevData => [...prevData, forecastData]);
-        //     }
-        // } catch (error) {
-        //     alert('You don`t have any trips yet!');
-        //     console.error(error);
-        // } finally {
-        //     setIsLoading(false);
-        // }
+        const storedData = localStorage.getItem('forecastData');
+        if (storedData) {
+            setData(JSON.parse(storedData));
+        } else {
+            const generatedData = generateRandomTrips(2);
+            localStorage.setItem('forecastData', JSON.stringify(generatedData));
+            setData(generatedData);
+        }
     }, []); 
+    
+/*------------------------USE WITH API-----------------------------*/
+    // useEffect(() => {
+    //     //setIsLoading(true);
+    //     // const storedData = localStorage.getItem('forecastData');
+    //     // try {
+    //     //     if (storedData) {
+    //     //         const forecastData = JSON.parse(storedData);
+    //     //         setData(prevData => [...prevData, forecastData]);
+    //     //     }
+    //     // } catch (error) {
+    //     //     alert('You don`t have any trips yet!');
+    //     //     console.error(error);
+    //     // } finally {
+    //     //     setIsLoading(false);
+    //     // }
+    // }, []); 
 
     useEffect(() => {
         if (dataSearch) {
