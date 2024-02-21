@@ -1,5 +1,6 @@
 import Header from "./Header/Header";
 import SearchBar from "./SearchBar/SearchBar";
+import TripList from "./TripList/TripList";
 
 import { useState } from "react";
 
@@ -16,7 +17,8 @@ export const App = () => {
     <div className="App">
       <Header />
       <main className="container">
-        <SearchBar handleClickSubmit={handleClickSubmit}/>
+        <SearchBar handleClickSubmit={handleClickSubmit} />
+        <TripList dataSearch={search} />
       </main>  
      </div> 
   );

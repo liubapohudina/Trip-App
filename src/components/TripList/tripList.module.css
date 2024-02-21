@@ -1,0 +1,12 @@
+.tripList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+}
+
+

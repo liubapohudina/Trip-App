@@ -13,6 +13,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+section {
+  margin-top: 40px;
+}
 .container {
   margin-top: 30px;
   min-width: 320px;
@@ -32,6 +35,9 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+ul {
+  list-style: none;
 }
 
 

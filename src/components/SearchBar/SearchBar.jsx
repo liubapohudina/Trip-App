@@ -13,10 +13,10 @@ import { useState } from 'react';
   const handleClick = (event) => {
     event.preventDefault();
 
-    if (search === '') {
-      alert("Please enter words");
-      return;
-    }
+    // if (search === '') {
+    //   alert("Please enter words");
+    //   return;
+    // }
 
     handleClickSubmit({search});
     setSearch('');
