@@ -1,0 +1,7 @@
+.details {
+    border-top: 3px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

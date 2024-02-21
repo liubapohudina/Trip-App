@@ -64,7 +64,7 @@ const Modal = ({ onClose, onAddTrip }) => {
                     <label htmlFor="date2">End date</label>
                     <input className={styles.inputmodal} onChange={onChangeInput} value={formData.date2} type="text" name="date2" id="date2" required placeholder='YYYY-MM-DD' />
 
-                    <button className={styles.btn} type='submit'>Submit</button>
+                    <button className={styles.btn} type='submit'>Done</button>
                 </form>
                 <button className={styles.btnModalClose} onClick={onClose}>
                     <RxCross2 className={styles.icon} />

@@ -9,8 +9,6 @@ const TripList = ({ dataSearch }) => {
     const [filterData, setFilterData] = useState([]);
     //const [isLoading, setIsLoading] = useState(false);
 
-    const mockData = generateRandomTrips(2);
-    console.log(mockData)
 
     useEffect(() => {
         const storedData = localStorage.getItem('forecastData');
