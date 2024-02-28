@@ -3,9 +3,10 @@ import { useState } from 'react';
 import WeatherDetails from '../../WeatherDetails/WeatherDetails';
 
 
-const TripListItem = ({ data }) => {
+const TripListItem = ({ data, deleteItem }) => {
     const [details, setdDtails] = useState('');
     const [isShowDetails, setShow] = useState(false);
+    
     
 
     const handleClick = (event, city) => {
@@ -13,11 +14,18 @@ const TripListItem = ({ data }) => {
         setdDtails(city)
         setShow(true)
     }
+    
+    const handleDeleteClick = (event, id) => {
+        event.preventDefault();
+        deleteItem(id);
+    }
+
 
     return (
         <div className={styles.box}>
             {data.map((trip, index) => (
                 <li className={styles.item} key={index} id={index} onClick={(e) => handleClick(e, trip.address)}>
+                    <button className={styles.btn} type='button' onClick={(e) => handleDeleteClick(e, index)}>Delete this trip</button>
                     <img src="https://th.bing.com/th/id/R.2c6bfc64c41fa0288d0399689af865fd?rik=SOc7jXe6ZVc2PQ&pid=ImgRaw&r=0" alt="London"></img>
                     <h3>{trip.address}</h3>
                     <p>{trip.days[0].datetime} - {trip.days[trip.days.length - 1].datetime}</p>

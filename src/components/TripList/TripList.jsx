@@ -50,18 +50,27 @@ const TripList = ({ dataSearch }) => {
     const addTripToList = (newTrip) => {
         setData(prevData => [...prevData, newTrip]);
     };
+    /*--------------for delete item from list and local storage---------------*/
+      const deleteItem = (id) => {
+        setData(prevData => {
+            const newData = prevData.filter((item, index) => index !== id);
+            localStorage.setItem('forecastData', JSON.stringify(newData));
+            return newData;
+        });
+    };
+    
     
    return (
     <section>
         {/* {isLoading && <p>Loading...</p>} */}
         {dataSearch && dataSearch.length > 0 ? (
             <ul className={styles.tripList}>
-                <TripListItem data={filterData} />
+                   <TripListItem data={filterData} deleteItem={deleteItem} />
                 <AddTripItem onAddTrip={addTripToList} />
             </ul>
         ) : data ? (
             <ul className={styles.tripList}>
-                <TripListItem data={data} />
+                <TripListItem data={data} deleteItem={deleteItem}/>
                 <AddTripItem onAddTrip={addTripToList} />
             </ul>
         ) : (
