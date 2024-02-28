@@ -32,6 +32,7 @@ img {
 .App {
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
