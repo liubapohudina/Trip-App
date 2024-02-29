@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { getForecast } from '../../api/api';
 
 const Modal = ({ onClose, onAddTrip }) => {
+    const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState({
         city: '',
         date1: '',
@@ -19,6 +20,7 @@ const Modal = ({ onClose, onAddTrip }) => {
 
     const onSubmitForm = async (event) => {
         event.preventDefault();
+        setLoading(true)
         try {
             const existingDataString = localStorage.getItem('forecastData');
             let existingData = existingDataString ? JSON.parse(existingDataString) : [];
@@ -35,7 +37,11 @@ const Modal = ({ onClose, onAddTrip }) => {
             onClose();
             onAddTrip(data);
         } catch (error) {
-            alert(error);
+            console.log(error)
+            alert(error.response.data);
+        }
+        finally {
+            setLoading(false)
         }
     };
 
@@ -70,6 +76,7 @@ const Modal = ({ onClose, onAddTrip }) => {
                     <RxCross2 className={styles.icon} />
                 </button>
             </div>
+            {loading && <p>...Loading</p>}
         </div>
     );
 }
